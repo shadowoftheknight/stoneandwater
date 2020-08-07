@@ -18,5 +18,7 @@ public interface Member {
     Collection getMembers();
     
     String getContents();
+
+    public boolean isRoot();
     
 }

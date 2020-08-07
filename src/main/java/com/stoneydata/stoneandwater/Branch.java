@@ -21,7 +21,6 @@ public class Branch implements Member{
 
    
     public Branch(){
-        root = this;
         members = new ArrayList();
     }
     
@@ -34,6 +33,7 @@ public class Branch implements Member{
         Branch p = new Branch();
         p.setContents(_contents);
         this.members.add(p);
+        root = this;
         return p;
     }
     
@@ -52,6 +52,11 @@ public class Branch implements Member{
     
     public String getContents(){
         return contents;
+    }
+
+    @Override
+    public boolean isRoot() {
+       return null != root;
     }
       
 }

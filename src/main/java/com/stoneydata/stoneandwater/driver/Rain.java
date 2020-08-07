@@ -21,7 +21,7 @@ public class Rain {
         Member a = tree.addMember("A"); // A
         Member b = tree.addMember("B");// B
         
-        a.addMember("A A");// A A
+        a.addMember("A A").addMember("A A A");// A A
         a.addMember("A B");// A B
         
         printTree(tree);
@@ -31,7 +31,11 @@ public class Rain {
         Iterator i = nextMember.getMembers().iterator();
         while(i.hasNext()){
             Member aMember = (Member) i.next();
-            System.out.println(""+aMember.getContents());
+            if(aMember.isRoot()){
+                System.out.println("[root] -> "+aMember.getContents());
+            }else{
+                System.out.println(""+aMember.getContents());
+            }
             printTree(aMember);
         }
     }
