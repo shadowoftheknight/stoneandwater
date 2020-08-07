@@ -28,15 +28,15 @@ public class Rain {
     }
 
     private static void printTree(Member nextMember) {
-        Iterator i = nextMember.getMembers().iterator();
-        while(i.hasNext()){
-            Member aMember = (Member) i.next();
+        nextMember.getMembers().forEach((t) -> {
+            Member aMember = (Member) (t);
             if(aMember.isRoot()){
                 System.out.println("[root] -> "+aMember.getContents());
             }else{
                 System.out.println(""+aMember.getContents());
             }
             printTree(aMember);
-        }
+        });
     }
+    
 }
