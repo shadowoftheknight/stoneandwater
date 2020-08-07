@@ -23,6 +23,8 @@ public class Rain {
         
         a.addMember("A A");// A A
         a.addMember("A B");// A B
+        
+        printTree(tree);
     }
 
     private static void printTree(Member nextMember) {

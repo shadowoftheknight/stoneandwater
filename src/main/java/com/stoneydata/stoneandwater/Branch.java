@@ -34,8 +34,6 @@ public class Branch implements Member{
         Branch p = new Branch();
         p.setContents(_contents);
         this.members.add(p);
-        
-        System.out.println(_contents + " Add m "+ p );
         return p;
     }
     
