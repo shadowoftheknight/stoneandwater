@@ -5,9 +5,11 @@
  */
 package com.stoneydata.stoneandwater.driver;
 
-import com.stoneydata.stoneandwater.BasicTree;
 import com.stoneydata.stoneandwater.Member;
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -16,15 +18,16 @@ import java.util.Iterator;
 public class Rain {
     
     public static void main(String args[]){
-       
-        BasicTree tree = new BasicTree(); //Root
-        Member a = tree.addMember("A"); // A
-        Member b = tree.addMember("B");// B
-        
-        a.addMember("A A").addMember("A A A");// A A
-        a.addMember("A B");// A B
-        
-        printTree(tree);
+        int solve = solve(8123);
+        System.out.println("solve " + solve);
+    }
+    
+   
+
+    public static int solve(int n) {
+        String amt = String.valueOf(n);
+        amt =  amt.replaceFirst("[0-2]","3");
+        return Integer.parseInt(amt);
     }
 
     private static void printTree(Member nextMember) {
